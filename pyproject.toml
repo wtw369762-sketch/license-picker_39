@@ -1,0 +1,36 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "license-picker"
+version = "0.3.0"
+description = "根据项目特征推荐开源许可证的轻量命令行工具"
+readme = "README.md"
+requires-python = ">=3.9"
+license = { text = "MIT" }
+authors = [{ name = "WT", email = "wtw369762@gmail.com" }]
+keywords = ["license", "spdx", "opensource", "compliance", "cli"]
+classifiers = [
+    "Development Status :: 4 - Beta",
+    "Environment :: Console",
+    "Intended Audience :: Developers",
+    "License :: OSI Approved :: MIT License",
+    "Natural Language :: Chinese (Simplified)",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3 :: Only",
+    "Topic :: Software Development :: Documentation",
+]
+
+[project.urls]
+Repository = "https://github.com/wtw369762-sketch/license-picker_39"
+Issues = "https://github.com/wtw369762-sketch/license-picker_39/issues"
+
+[project.scripts]
+license-picker = "license_picker.cli:main"
+
+[tool.setuptools.packages.find]
+include = ["license_picker*"]
+
+[tool.setuptools.package-data]
+license_picker = ["data/*.json"]
