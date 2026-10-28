@@ -10,6 +10,10 @@ from dataclasses import dataclass
 
 from .rules import load_licenses
 
+# 打分权重集中在这里，方便调整后一眼看出影响范围
+PATENT_BONUS = 2
+PATENT_MALUS = -2
+
 
 @dataclass(frozen=True)
 class Preferences:
@@ -63,10 +67,10 @@ def score_license(license, prefs: Preferences) -> Recommendation:
     # 2. 专利条款
     if prefs.need_patent_grant:
         if license.patent_grant:
-            score += 2
+            score += PATENT_BONUS
             reasons.append("含明确的专利授权条款")
         else:
-            score -= 2
+            score += PATENT_MALUS
             reasons.append("没有专利授权条款，专利风险由使用者自担")
 
     # 3. 是否作为被链接的库
