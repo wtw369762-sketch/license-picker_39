@@ -64,10 +64,10 @@ def score_license(license, prefs: Preferences) -> Recommendation:
     if prefs.need_patent_grant:
         if license.patent_grant:
             score += 2
-            reasons.append("含明确的专利授权条款")
+            reasons.append("含明确的专利授权条款（如 Apache-2.0 第 3 条）")
         else:
             score -= 2
-            reasons.append("没有专利授权条款，专利风险由使用者自担")
+            reasons.append("没有专利授权条款，专利权人仍可单独主张")
 
     # 3. 是否作为被链接的库
     if prefs.is_library:
