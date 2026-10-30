@@ -1,0 +1,39 @@
+name: Bug 报告
+description: 推荐结果不对、命令报错、输出异常
+title: "[Bug] "
+labels: ["bug"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        感谢反馈。请尽量提供可以复现的最小信息。
+  - type: textarea
+    id: what
+    attributes:
+      label: 发生了什么
+      description: 你期望的结果，和实际的结果。
+    validations:
+      required: true
+  - type: textarea
+    id: steps
+    attributes:
+      label: 复现步骤
+      placeholder: |
+        1. 运行 python -m license_picker --profile library
+        2. 看到推荐结果是 ...
+    validations:
+      required: true
+  - type: input
+    id: version
+    attributes:
+      label: 版本与运行环境
+      placeholder: "0.3.0 / Windows 11 / Python 3.12"
+    validations:
+      required: true
+  - type: textarea
+    id: output
+    attributes:
+      label: 完整输出
+      render: shell
+    validations:
+      required: false

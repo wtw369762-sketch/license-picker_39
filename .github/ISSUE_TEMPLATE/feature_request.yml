@@ -1,0 +1,41 @@
+name: 功能建议
+description: 新增许可证、调整打分权重、改进输出
+title: "[Feature] "
+labels: ["enhancement"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        提建议前请先确认：这是否属于 `docs/design.md` 里列出的「已知局限」？是的话也欢迎，但请先看一眼现有取舍。
+  - type: dropdown
+    id: kind
+    attributes:
+      label: 建议类型
+      options:
+        - 新增许可证数据
+        - 调整打分权重
+        - 命令行交互 / 输出格式
+        - 文档
+        - 其他
+    validations:
+      required: true
+  - type: textarea
+    id: problem
+    attributes:
+      label: 你想解决什么问题
+      description: 描述场景，而不是直接给方案。
+    validations:
+      required: true
+  - type: textarea
+    id: proposal
+    attributes:
+      label: 你倾向的方案
+    validations:
+      required: false
+  - type: textarea
+    id: evidence
+    attributes:
+      label: 依据（新增或修改许可证数据时必填）
+      description: 官方许可证文本或 SPDX 页面链接。
+    validations:
+      required: false

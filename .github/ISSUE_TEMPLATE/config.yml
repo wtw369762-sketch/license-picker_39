@@ -1,0 +1,8 @@
+blank_issues_enabled: false
+contact_links:
+  - name: 先看常见问题
+    url: https://github.com/wtw369762-sketch/license-picker_39/blob/main/docs/faq.md
+    about: 同分并列、切换许可证、BSD-2 为什么没收录，这里都有答案。
+  - name: 贡献流程
+    url: https://github.com/wtw369762-sketch/license-picker_39/blob/main/CONTRIBUTING.md
+    about: 分支命名、提交信息规范、PR 检查清单。
